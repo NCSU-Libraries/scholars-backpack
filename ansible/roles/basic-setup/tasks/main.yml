@@ -1,0 +1,55 @@
+---
+- name: install epel-release
+  yum:
+    name: epel-release
+    state: present
+- name: install required packages using yum
+  yum:
+    pkg: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+    - firefox
+    - git-core
+    - vim
+    - curl
+    - zlib
+    - zlib-devel
+    - gcc-c++
+    - readline
+    - readline-devel
+    - libyaml-devel
+    - libffi-devel
+    - openssl-devel
+    - make
+    - bzip2
+    - autoconf
+    - automake
+    - libtool
+    - bison
+    - sqlite
+    - sqlite-devel
+    - libxml2-devel
+    - libxslt-devel
+    - libcurl-devel
+    - nodejs
+    - httpd
+    - httpd-devel
+    - nano
+    - tree
+    - htop
+    - python34
+    - python34-devel
+    - python34-setuptools
+    - python34-tools
+    - freetype
+    - freetype-devel
+    - libpng-devel
+    - libjpeg-devel
+    - zlib-devel
+- name: set default vagrant ssh directory
+  lineinfile: dest=/home/vagrant/.bashrc line="cd /vagrant/code"
+  tags:
+    - set_default_dir
+- name: set $DISPLAY environment variable
+  lineinfile: dest=/home/vagrant/.bashrc line="export DISPLAY=:0.0"

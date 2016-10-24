@@ -1,0 +1,16 @@
+---
+- hosts: scholars-backpack
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  become_user: root
+  vars:
+    project_name: "scholars-backback"
+  roles:
+    - role: basic-setup
+    - role: python
+    - role: jupyter
+    - role: r
+    - role: desktop
+  handlers:
+    - include: handlers/handlers.yml

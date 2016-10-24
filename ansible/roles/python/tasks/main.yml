@@ -1,0 +1,19 @@
+---
+- name: download pip3
+  get_url: url=https://bootstrap.pypa.io/get-pip.py dest=/tmp/get-pip.py
+- name: install pip3
+  command: python3 /tmp/get-pip.py
+- name: install python packages using pip3
+  pip: name={{item}} executable=/usr/bin/pip3
+  with_items:
+    - matplotlib
+    - numpy
+    - scipy
+    - pandas
+    - Pillow
+    - beautifulsoup4
+    - requests
+    - wordcloud
+    - jupyter
+    - sympy
+    - nose

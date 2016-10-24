@@ -1,0 +1,7 @@
+.vagrant/
+ansible/playbook.retry
+ansible/ansible.log
+ansible/tmp/*
+*.retry
+code/pdf_files/*
+.ipynb_checkpoints/

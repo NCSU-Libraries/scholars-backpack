@@ -1,0 +1,37 @@
+---
+- name: make sure R is installed
+  yum: name=R state=installed
+- name: install additional R packages
+  yum: name={{item}} state=present
+  with_items:
+    - R-core
+    - R-core-devel
+- name: adding a few R packages
+  command: /usr/bin/Rscript --slave --no-save --no-restore-history -e "if (! ('{{item}}' %in% installed.packages()[,'Package'])) install.packages(pkgs={{item}}, repos=c('http://cran.rstudio.com/'))"
+  with_items:
+    - boot
+    - class
+    - cluster
+    - codetools
+    - foreign
+    - KernSmooth
+    - lattice
+    - MASS
+    - Matrix
+    - mgcv
+    - nlme
+    - nnet
+    - rpart
+    - spatial
+    - survival
+    - datasets
+
+- name: download R Studio package
+  get_url:
+    url: https://download1.rstudio.org/rstudio-0.99.903-x86_64.rpm
+    dest: /tmp/rstudio-0.99.903-x86_64.rpm
+- name: install R Studio from package
+  yum: name=/tmp/rstudio-0.99.903-x86_64.rpm state=present
+  # required for rStudio to start
+- name: create machine-id file
+  command: dbus-uuidgen --ensure

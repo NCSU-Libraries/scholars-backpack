@@ -1,0 +1,14 @@
+- name: Create desktop shortcut for localhost:8888
+  copy: src=files/JupyterIcon.desktop dest=/home/vagrant/Desktop
+
+- name: Create desktop shortcut for GettingStarted.md
+  copy: src=files/GettingStartedIcon.desktop dest=/home/vagrant/Desktop
+
+- name: Create desktop shortcut for RStudio
+  copy: src=files/Rstudio.desktop dest=/home/vagrant/Desktop
+
+- name: Update permissions for RStudio link
+  file: path=/home/vagrant/Desktop/Rstudio.desktop  mode="u=rwx,g=rx,o=rx"
+
+- name: Symlink to code directory
+  file: src=/vagrant/code dest=/home/vagrant/Desktop/code state=link force=yes
