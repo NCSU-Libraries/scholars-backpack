@@ -7,8 +7,4 @@
   vars:
     project_name: "scholars-backback"
   roles:
-    - role: basic-setup
-    - role: python
-    - role: jupyter-server-setup
-    - role: r
-    - role: desktop
+    - jupyter-server-start

@@ -3,7 +3,6 @@ Description=Jupyter Notebook
 
 [Service]
 Type=simple
-PIDFile=/var/run/jupyter-notebook.pid
 ExecStart=/usr/bin/jupyter notebook --config=/home/vagrant/.jupyter/jupyter_notebook_config.py
 User=vagrant
 Group=vagrant

@@ -27,4 +27,10 @@ Vagrant.configure(2) do |config|
     ansible.inventory_path = 'ansible/inventories/development.ini'
     ansible.limit = 'all'
   end
+
+  config.vm.provision "ansible_local", run: "always" do |ansible|
+    ansible.playbook = 'ansible/server-start.yml'
+    ansible.inventory_path = 'ansible/inventories/development.ini'
+    ansible.limit = 'all'
+  end
 end

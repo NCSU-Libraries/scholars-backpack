@@ -1,0 +1,11 @@
+- name: Create ./jupyter directory
+  file: path=/home/vagrant/.jupyter state=directory mode=0755 owner=vagrant group=vagrant
+
+- name: Install jupyter configuration file
+  copy: src=files/jupyter_notebook_config.py dest=/home/vagrant/.jupyter owner=vagrant group=vagrant
+
+- name: Install jupyter notebook systemd service
+  copy: src=files/jupyter-notebook.service dest=/etc/systemd/system
+
+- name: reload systemd daemon
+  command: /bin/systemctl daemon-reload

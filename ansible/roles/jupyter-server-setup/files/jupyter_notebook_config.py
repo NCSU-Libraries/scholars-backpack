@@ -162,7 +162,7 @@ c.NotebookApp.ip = '0.0.0.0'
 ## The full path to a private key file for usage with SSL/TLS.
 #c.NotebookApp.keyfile = ''
 
-## The login handler class to use.
+## The in handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
 
 ## The logout handler class to use.
