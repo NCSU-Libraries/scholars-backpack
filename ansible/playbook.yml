@@ -11,4 +11,5 @@
     - role: python
     - role: jupyter-server-setup
     - role: r
+    - role: rstudio
     - role: desktop
