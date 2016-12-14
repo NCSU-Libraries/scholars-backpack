@@ -15,7 +15,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.hostname = "scholars-backpack"
 
-  config.vm.network "private_network", ip: "192.168.50.31"
+  # FIXME: Monitor issue https://github.com/boxcutter/centos/issues/54
+  # config.vm.network "private_network", ip: "192.168.50.31"
 
   config.vm.network "forwarded_port", guest: 80, host: 14401, auto_correct: true
   config.vm.network "forwarded_port", guest: 3306, host: 14402, auto_correct: true
