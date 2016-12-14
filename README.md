@@ -63,6 +63,10 @@ Modern research practice asks researchers to engage with information in new ways
 - spatial
 - survival
 - datasets
+- ggplot2
+- plotly
+- dplyr
+- knitr
 
 ## Vagrant Notes
 
