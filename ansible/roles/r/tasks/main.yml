@@ -6,8 +6,8 @@
   with_items:
     - R-core
     - R-core-devel
-- name: adding a few R packages
-  command: /usr/bin/Rscript --slave --no-save --no-restore-history -e "if (! ('{{item}}' %in% installed.packages()[,'Package'])) install.packages(pkgs={{item}}, repos=c('http://cran.rstudio.com/'))"
+- name: install R packages from cran
+  cran: name={{item}} state=present
   with_items:
     - boot
     - class
@@ -24,4 +24,8 @@
     - rpart
     - spatial
     - survival
+    - knitr
     - datasets
+    - ggplot2
+    - plotly
+    - dplyr

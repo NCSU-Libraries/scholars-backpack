@@ -10,6 +10,7 @@
     - role: basic-setup
     - role: python
     - role: jupyter-server-setup
+    - role: ansible-module-cran
     - role: r
     - role: rstudio
     - role: desktop
