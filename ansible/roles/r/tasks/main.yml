@@ -29,3 +29,4 @@
     - ggplot2
     - plotly
     - dplyr
+    - rmarkdown
