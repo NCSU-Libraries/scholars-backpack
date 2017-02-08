@@ -47,6 +47,8 @@
     - libpng-devel
     - libjpeg-devel
     - zlib-devel
+    - texlive-titling
+    - texlive-framed
 - name: set default vagrant ssh directory
   lineinfile: dest=/home/vagrant/.bashrc line="cd /vagrant/code"
   tags:
