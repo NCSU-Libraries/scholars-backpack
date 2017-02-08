@@ -30,3 +30,4 @@
     - plotly
     - dplyr
     - rmarkdown
+    - formatR
