@@ -1,0 +1,39 @@
+---
+- name: Install .Rprofile configuration file
+  copy:
+    src: files/.Rprofile
+    dest: /home/vagrant
+    owner: vagrant
+    group: vagrant
+
+- name: download R Studio Server package
+  get_url:
+    url: https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
+    dest: /tmp/rstudio-server-rhel-1.0.136-x86_64.rpm
+    checksum: md5:ed7ebef1eb47f19cdfe05288b77c3336
+    mode: '0755'
+
+- name: install R Studio Server from package
+  yum:
+    name: /tmp/rstudio-server-rhel-1.0.136-x86_64.rpm
+    state: present
+
+- name: update rserver.conf
+  lineinfile:
+    name: /etc/rstudio/rserver.conf
+    line: 'rsession-which-r=/usr/local/anaconda/bin/R'
+    state: present
+    create: yes
+
+- name: create r-versions
+  lineinfile:
+    name: /etc/rstudio/r-versions
+    line: '/usr/local/anaconda/bin/R'
+    state: present
+    create: yes
+
+- name: reset rstudio service
+  command: /bin/systemctl reset-failed rstudio-server
+
+- name: start Server
+  command: rstudio-server start

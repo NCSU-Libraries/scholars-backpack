@@ -1,6 +1,0 @@
-- name: reload systemd daemon
-  command: /bin/systemctl daemon-reload
-
-- name: Start jupyter notebook server
-  command: systemctl start jupyter-notebook
-  tags: start-jupyter

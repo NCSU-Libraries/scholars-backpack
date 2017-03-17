@@ -1,0 +1,12 @@
+---
+- name: Return anaconda binary location and name to registered var
+  command: readlink -f {{anaconda_parent_dir}}/anaconda/
+  register: anaconda_binary
+
+- name: Change anaconda owner to vagrant user
+  file:
+    path: "{{ anaconda_binary.stdout }}"
+    state: directory
+    owner: vagrant
+    group: vagrant
+    recurse: yes

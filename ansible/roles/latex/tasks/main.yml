@@ -1,0 +1,16 @@
+---
+- name: install latex packages using yum
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - texlive
+    - texlive-latex
+    - texlive-xetex
+    - texlive-collection-latex
+    - texlive-collection-latexrecommended
+    - texlive-xetex-def
+    - texlive-collection-xetex
+    - texlive-titling
+    - texlive-framed

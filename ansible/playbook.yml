@@ -1,16 +1,17 @@
 ---
-- hosts: scholars-backpack
-  gather_facts: yes
-  become: yes
-  become_method: sudo
-  become_user: root
-  vars:
-    project_name: "scholars-backback"
-  roles:
-    - role: basic-setup
-    - role: python
-    - role: jupyter-server-setup
-    - role: ansible-module-cran
-    - role: r
-    - role: rstudio
-    - role: desktop
+  - hosts: all
+    vars:
+      anaconda_make_sys_default : true
+    become: yes
+    become_method: sudo
+    become_user: root
+    gather_facts: yes
+    roles:
+      - role: basic-setup
+      - role: latex
+      - role: andrewrothstein.anaconda
+      - role: fix-anaconda-permissions
+      - role: jupyter-server
+      - role: ansible-module-cran
+      - role: r
+      - role: rstudio-server

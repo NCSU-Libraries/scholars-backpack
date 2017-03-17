@@ -23,7 +23,8 @@ options:
     default: "https://cran.rstudio.com/"
 '''
 
-RSCRIPT = '/usr/bin/Rscript'
+# RSCRIPT = '/usr/bin/Rscript'
+RSCRIPT = '/usr/local/anaconda/bin/Rscript'
 
 def get_installed_version(module):
 	cmd = [RSCRIPT, '--slave', '--no-save', '--no-restore-history',
