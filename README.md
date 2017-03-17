@@ -15,11 +15,11 @@ Modern research practice asks researchers to engage with information in new ways
 
 ## Running the Introductory Jupyter Notebook
 
-Jupyter notebooks are accessible from [localhost:5453](https://localhost:5453)
+Jupyter notebooks are accessible from [localhost:5453](http://localhost:5453)
 
 ## R Studio
 
-R Studio is accessible from [localhost:5452](https://localhost:5452)
+R Studio is accessible from [localhost:5452](http://localhost:5452)
 
 Username: `vagrant` Password: `vagrant`
 
