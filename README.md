@@ -5,7 +5,7 @@ Modern research practice asks researchers to engage with information in new ways
 ## Getting Started
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
-    * **Vagrant 1.9.2 or higher is required.**
+    * **Vagrant 1.9.4 or higher is required.**
     * **Windows users must also install a shell environment** like [Git for Windows](https://git-for-windows.github.io/).
 1. Clone or download this repository as a zip file.
 
