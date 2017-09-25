@@ -13,6 +13,12 @@
     owner: vagrant
     group: vagrant
 
+- name: Install nb extensions
+  command: /usr/local/anaconda/bin/conda install -c conda-forge nb_conda_kernels nb_conda
+
+- name: Install nb extensions deps
+  command: /usr/local/anaconda/bin/conda install ipykernel
+
 - name: Install jupyter notebook systemd service
   copy:
     src: files/jn.service

@@ -174,6 +174,8 @@ c.NotebookApp.ip = '0.0.0.0'
 #  between this version of Jupyter and the next stable one.
 #c.NotebookApp.kernel_spec_manager_class = 'jupyter_client.kernelspec.KernelSpecManager'
 
+c.NotebookApp.kernel_spec_manager_class = 'nb_conda_kernels.CondaKernelSpecManager'
+
 ## The full path to a private key file for usage with SSL/TLS.
 #c.NotebookApp.keyfile = ''
 
