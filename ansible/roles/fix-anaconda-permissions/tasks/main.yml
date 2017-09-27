@@ -10,3 +10,15 @@
     owner: vagrant
     group: vagrant
     recurse: yes
+
+- name: Install anaconda configuration file
+  copy:
+    src: files/.condarc
+    dest: /home/vagrant/.condarc
+    owner: vagrant
+    group: vagrant
+
+- name: Install conda-build
+  become: yes
+  become_user: vagrant
+  command: /usr/local/anaconda/bin/conda install conda-build
