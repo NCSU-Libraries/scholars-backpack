@@ -5,7 +5,7 @@ Modern research practice asks researchers to engage with information in new ways
 ## Getting Started
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
-    * **Vagrant 1.9.4 or higher is required.**
+    * **Vagrant 2.0 or higher is required.**
     * **Windows users must also install a shell environment** like [Git for Windows](https://git-for-windows.github.io/).
 1. Clone or download this repository as a zip file.
 
@@ -21,19 +21,21 @@ Jupyter notebooks are accessible from [localhost:5453](http://localhost:5453)
 
 R Studio is accessible from [localhost:5452](http://localhost:5452)
 
-Username: `vagrant` Password: `vagrant`
+Username: `vagrant`
+
+Password: `vagrant`
 
 ## What's inside?
 
 ### Python
 
-This environment uses [Anaconda 4.3.0](https://www.continuum.io/downloads) to install and manage Python. A complete list of included packages can be found under the [Python 3.6](https://docs.continuum.io/anaconda/pkg-docs) package list.
+This environment uses [Anaconda 4.4.0](https://www.continuum.io/downloads) to install and manage Python. A complete list of included packages can be found under the [Python 3.6](https://docs.continuum.io/anaconda/pkg-docs) package list.
 
 ### R
 
-Anaconda is also used to manage R. This environment uses the conda package [r-essentials](https://docs.continuum.io/anaconda/r-language-pkg-docs).
+Anaconda is also used to manage R. This environment uses the conda package [r-essentials](https://docs.continuum.io/anaconda/r-language-pkg-docs). The default R working directory is automatically configured to `/vagrant/code`.
 
-The following additional packages are installed using CRAN:
+The following additional R packages are installed using conda:
 
 * plotly
 
