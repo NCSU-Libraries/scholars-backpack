@@ -10,7 +10,7 @@
       - role: basic-setup
       - role: latex
       - role: andrewrothstein.anaconda
-      - role: fix-anaconda-permissions
+      - role: anaconda-config
       - role: jupyter-server
       - role: ansible-module-cran
       - role: r
