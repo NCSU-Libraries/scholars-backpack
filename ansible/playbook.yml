@@ -12,6 +12,5 @@
       - role: andrewrothstein.anaconda
       - role: anaconda-config
       - role: jupyter-server
-      - role: ansible-module-cran
       - role: r
       - role: rstudio-server

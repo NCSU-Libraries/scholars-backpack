@@ -1,12 +1,5 @@
 ---
-- name: install r-essentials
+- name: install r-essentials and other r packages
   become: yes
   become_user: vagrant
-  command: /usr/local/anaconda/bin/conda install -c r r-essentials
-
-- name: install R packages from cran
-  cran:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - plotly
+  command: /usr/local/anaconda/bin/conda install -c r r-essentials r-plotly
