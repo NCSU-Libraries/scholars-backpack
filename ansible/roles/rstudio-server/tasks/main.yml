@@ -1,11 +1,4 @@
 ---
-# - name: Install .Rprofile configuration file
-#   copy:
-#     src: files/.Rprofile
-#     dest: /home/vagrant
-#     owner: vagrant
-#     group: vagrant
-
 - name: download R Studio Server package
   get_url:
     url: https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
@@ -18,17 +11,24 @@
     name: /tmp/rstudio-server-rhel-1.0.136-x86_64.rpm
     state: present
 
-- name: update rserver.conf
+- name: add anaconda R to rserver.conf
   lineinfile:
     name: /etc/rstudio/rserver.conf
     line: 'rsession-which-r=/usr/local/anaconda/bin/R'
     state: present
     create: yes
 
-- name: create r-versions
+- name: create r-versions and add anaconda R
   lineinfile:
     name: /etc/rstudio/r-versions
     line: '/usr/local/anaconda/bin/R'
+    state: present
+    create: yes
+
+- name: add default working directory to rsession.conf
+  lineinfile:
+    name: /etc/rstudio/rsession.conf
+    line: 'session-default-working-dir=/vagrant/code'
     state: present
     create: yes
 
