@@ -1,10 +1,10 @@
 ---
-- name: Install .Rprofile configuration file
-  copy:
-    src: files/.Rprofile
-    dest: /home/vagrant
-    owner: vagrant
-    group: vagrant
+# - name: Install .Rprofile configuration file
+#   copy:
+#     src: files/.Rprofile
+#     dest: /home/vagrant
+#     owner: vagrant
+#     group: vagrant
 
 - name: download R Studio Server package
   get_url:
