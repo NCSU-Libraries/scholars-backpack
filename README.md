@@ -29,7 +29,7 @@ Password: `vagrant`
 
 ### Python
 
-This environment uses [Anaconda 4.4.0](https://www.continuum.io/downloads) to install and manage Python. A complete list of included packages can be found under the [Python 3.6](https://docs.continuum.io/anaconda/pkg-docs) package list.
+This environment uses [Anaconda 5.0.0](https://www.continuum.io/downloads) to install and manage Python. A complete list of included packages can be found under the [Python 3.6](https://docs.continuum.io/anaconda/pkg-docs) package list.
 
 ### R
 
