@@ -21,7 +21,7 @@
 - name: add ld-library-path to rserver.conf
   lineinfile:
     name: /etc/rstudio/rserver.conf
-    line: 'rsession-ld-library-path=/usr/local/Anaconda3-5.0.0-Linux-x86_64/lib'
+    line: 'rsession-ld-library-path=/usr/local/Anaconda3-5.0.1-Linux-x86_64/lib'
     state: present
     create: yes
 
