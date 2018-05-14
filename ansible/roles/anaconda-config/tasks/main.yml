@@ -10,6 +10,7 @@
     owner: vagrant
     group: vagrant
     recurse: yes
+    follow: no
 
 - name: Install anaconda configuration file
   copy:
