@@ -7,8 +7,9 @@
 # you're doing.
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "box-cutter/centos72"
+  config.vm.box = "centos/7"
   config.vm.hostname = "scholars-backpack"
+  config.vm.synced_folder ".", "/vagrant", type: "sshfs"
 
   config.vm.network "forwarded_port", guest: 8983, host: 5454
   config.vm.network "forwarded_port", guest: 8888, host: 5453
